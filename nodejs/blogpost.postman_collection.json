@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "3c5c7eda-1702-4221-94bd-2bfd43c1497d",
+		"name": "blog post",
+		"description": "# Blog post Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "update comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"edited comment\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}/comment/{{commentId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}",
+								"comment",
+								"{{commentId}}"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get comment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}/comment/{{commentId}}/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}",
+								"comment",
+								"{{commentId}}",
+								""
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"edited comment\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}",
+								"comment"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "comments count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Count of comments is equal or greater than 0\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.count).to.gte(0);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"text\": \"edited comment\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}/comments/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}",
+								"comments",
+								"count"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "get blog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get blogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get blogs id and title",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"title"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "blogPostId",
+			"value": "3d7ef429-1fa2-40c7-aa5c-fa3492571e1b"
+		},
+		{
+			"key": "commentId",
+			"value": "280d5020-93fa-4a10-9b4f-ebc6bb1ddbfa"
+		}
+	]
+}
