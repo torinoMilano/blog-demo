@@ -28,6 +28,10 @@ node service containing the api
 
 proxy to request directly from http://localhost/
 
+- frontend
+
+frontend to display blogs and comments.
+
 ## Build
 From root of directory
 
