@@ -12,7 +12,7 @@ Comments:
 - create a new comment (name is optional, text is required)
 - update an existing comment
 
-## Prerequisites
+## Prerequisites (only when developing, not required if you run docker-compose)
 Make sure you have the following installed:
 - [Node.js](https://nodejs.org/en/download/) >= 17
 - [Docker](https://www.docker.com/)
