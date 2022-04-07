@@ -47,10 +47,11 @@ Will use docker compose nginx and node js to expose
 cd nodejs; 
 npm run test
 ```
-Running newman test via docker
-After sucessfully run the ./build.sh command
+### Newman tests against running docker instance
 
-Just run from ./nodejs directory
+
 ```bash 
+./build.sh;
+cd nodejs;
 ./run_newman.sh 
 ``` 
