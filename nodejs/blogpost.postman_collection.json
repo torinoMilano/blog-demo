@@ -44,6 +44,39 @@
 					"response": []
 				},
 				{
+					"name": "create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"The Report started life as an email gossip sheet, and then became a trashy webzine with negligible traffic. But thanks to the decision in 1998 to run a scurrilous rumour – untouched by mainstream media – about Bill Clinton and a White House intern named Monica Lewinsky, it became a national phenomenon\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog/{{blogPostId}}/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog",
+								"{{blogPostId}}",
+								"comment"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
 					"name": "get comment",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -223,6 +256,37 @@
 						"body": {
 							"mode": "raw",
 							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/blogpost/v1/api/blog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"blogpost",
+								"v1",
+								"api",
+								"blog"
+							]
+						},
+						"description": "update comment"
+					},
+					"response": []
+				},
+				{
+					"name": "create blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"new blog\",\n    \"body\": \"a new blog, a new start\",\n    \"author\": \"another me\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

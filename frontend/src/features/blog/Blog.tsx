@@ -34,12 +34,10 @@ export const Blog = () => {
     return (
         <main className="page">
             <h1 className={styles.h1}>{blog.title}</h1>
-            <textarea rows={10} cols={300} className={styles.blog} readOnly={true} value={blog.body}
+            <textarea rows={20} cols={400} className={styles.textarea} readOnly={true} value={blog.body}
                       defaultValue="no text has  submitted"/>
             <div className={styles.blog}> 😻 &lt;{blog.author}&gt;</div>
             <div className={styles.blog}> ⏲ <small>{geRelativeCreatedOn(blog.created_on)}</small></div>
-
-
             {comments.map(comment =>
                 <div className={styles.dialogbox} key={comment.id}>
                     <div className={styles.body}>

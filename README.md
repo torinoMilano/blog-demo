@@ -33,7 +33,9 @@ From root of directory
 
 ```./build.sh```
 
-Will use docker compose nginx and node js to expose the API to address http://localhost/blogpost/v1/api/blog  
+Will use docker compose nginx and node js to expose 
+- the API to address http://localhost/blogpost/v1/api/blog
+- the frontend to http://localhost
 
 ## Testing 
 
@@ -44,7 +46,7 @@ npm run test
 Running newman test via docker
 After sucessfully run the ./build.sh command
 
-Just run 
+Just run from ./nodejs directory
 ```bash 
 ./run_newman.sh 
 ``` 

@@ -7,7 +7,7 @@ router.get("/blog", blogPostApi.list); // list
 router.get("/blog/title", blogPostApi.listByTitle); // list
 router.post("/blog", blogPostApi.create); // create
 router.get("/blog/:id", blogPostApi.read); // read
-router.post("/blog/:id", blogPostApi.update); // update
+router.put("/blog/:id", blogPostApi.update); // update
 router.delete("/blog/:id", blogPostApi.deleteBlogPost); // delete
 
 //comments

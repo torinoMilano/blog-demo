@@ -3,9 +3,9 @@ import {Request, Response} from "express/ts4.0";
 import {logger} from "../classes/Logger";
 import {Comment} from "../classes/BlogPost";
 
-const ERROR_STATUS: number = 400;
-const SORT_ASC: string = "asc";
-const SORT_DESC: string = "desc";
+const ERROR_STATUS = 400;
+const SORT_ASC = "asc";
+const SORT_DESC = "desc";
 
 export const errorResponse = async (req: Request, res: Response, message: string) => {
     return res
@@ -68,7 +68,7 @@ export const readComment = async (req: Request, res: Response) => {
     const {id, id_comment} = req.params;
     const blogPost = await BlogPostApi.getBlogPost(id);
     if (typeof blogPost !== 'undefined' && blogPost) {
-        let comments = blogPost.comments || [];
+        const comments = blogPost.comments || [];
         const filterCommentWithId = (comment: Comment) => comment.id === id_comment;
         const comment = comments.find(filterCommentWithId) || emptyComment;
         logger.info(`finding comment with id ${id_comment} ${comments.find(filterCommentWithId)}`)
@@ -81,7 +81,7 @@ export const comments = async (req: Request, res: Response) => {
     // blog/:id/comments
     const {id} = req.params;
     const blogPost = await BlogPostApi.getBlogPost(id);
-    let blogComments = blogPost?.comments || [];
+    const blogComments = blogPost?.comments || [];
     res.json({comments: blogComments});
 }
 
@@ -89,19 +89,19 @@ export const commentsCounts = async (req: Request, res: Response) => {
     // blog/:id/comments/count
     const {id} = req.params;
     const blogPost = await BlogPostApi.getBlogPost(id);
-    let blogComments = blogPost?.comments || [];
+    const blogComments = blogPost?.comments || [];
     res.json({count: blogComments.length});
 }
 
 export const update = async (req: Request, res: Response) => {
-    const {id} = req.params;
-    const {title, body} = req.body;
+    const {id} = req.params || {};
+    const {title, body} = req.body || {};
     if (typeof title !== 'undefined' && typeof body !== undefined && body && title) {
         const blogPost = await BlogPostApi.updateBlogPost(id, {title, body});
         logger.info(`updating blogpost ${blogPost?.id} with ${blogPost?.title} and ${blogPost?.body}`)
         res.json({...blogPost});
     }
-    return errorResponse(req, res, "Missing title and body");
+    return errorResponse(req, res, "Missing title and/or body");
 
 }
 
