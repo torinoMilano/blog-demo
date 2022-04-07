@@ -1,4 +1,4 @@
-# Blog-server
+# Blog api and frontend
 Blog Posts API service to return details about a post to a blog.
 Using nodejs and nginx as proxy pass
 
