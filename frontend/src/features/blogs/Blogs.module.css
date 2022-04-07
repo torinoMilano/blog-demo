@@ -1,0 +1,28 @@
+.blogs {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    padding: 0.5rem 1rem;
+    margin: 2em;
+}
+
+.blogs li {
+    border: 3px solid #333;
+    text-align: left;
+    padding: 1em;
+}
+
+.blogs li div {
+    text-align: right;
+}
+
+.blog {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.commentButtonAdd {
+    background-color: tomato;
+}

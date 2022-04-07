@@ -1,0 +1,49 @@
+{
+  "name": "blog-server",
+  "version": "1.0.0",
+  "description": "node blog web service",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'",
+    "lint": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torinoMilano/blog-server.git"
+  },
+  "keywords": [
+    "nodejs",
+    "blog",
+    "service",
+    "server"
+  ],
+  "author": "murat kanmaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torinoMilano/blog-server/issues"
+  },
+  "homepage": "https://github.com/torinoMilano/blog-server#readme",
+  "dependencies": {
+    "dayjs": "^1.11.0",
+    "express": "^5.0.0-beta.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@types/chai": "^4.3.0",
+    "@types/express": "^4.17.13",
+    "@types/mocha": "^9.1.0",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.23",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.12.0",
+    "mocha": "^9.2.2",
+    "morgan": "^1.10.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
